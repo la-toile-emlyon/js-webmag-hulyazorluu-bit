@@ -4,14 +4,14 @@
 :root {
    --primary: #18181b;
    --primary-light: #27272a;
-   --accent: #88ff00a1;
+   --accent: #405a0939;
    --accent-hover: #ffffff;
    --bg: #fafcf2;
    --bg-card: #ffffff;
    --border: #e4e4e7;
    --text: #0F172A;
    --text-muted: #374404bc;
-   --text-white: #ffffff;
+   --text-white: #95ff00;
 
    --radius-sm: 6px;
    --radius-md: 12px;
@@ -247,7 +247,7 @@ p {
 /* ── Badges & dates ── */
 .theme-badge {
    display: inline-block;
-   background: rgb(86, 105, 0);
+   background: rgb(57, 70, 0);
    color: var(--text-white);
    padding: 2px 10px;
    font-size: .68rem;
