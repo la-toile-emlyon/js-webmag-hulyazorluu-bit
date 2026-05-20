@@ -21,7 +21,8 @@ function getData() {
       let phraseAccroche = document.getElementById('phrase-accroche');
 
       nomJournal.textContent = journal.nomJournal;
-      phraseAccroche.textcontent = journal.phraseAccroche;
+      phraseAccroche.textContent = journal.phraseAccroche;
+
 
 
 
@@ -47,6 +48,7 @@ function getData() {
 
 
 
+
       // TODO 3: REMPLIR L'ARTICLE PRINCIPAL
       let articlePrincipal = journal.articlePrincipal;
 
@@ -62,7 +64,7 @@ function getData() {
       </div>
     `;
 
-
+      document.getElementById('article-principal').innerHTML = articlePrincipalHTML;
 
 
 
@@ -151,6 +153,49 @@ function getData() {
       calltoAction.innerHTML = ctaHTML;
 
 
+      //API
+      fetch('https://www.colourlovers.com/api/palettes/random?format=json')
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Erreur API");
+          }
+          return response.json();
+        })
+        .then((data) => {
+
+          console.log("API reçue :", data);
+
+          let palette = data[0];
+
+          let couleursHTML = '';
+
+          palette.colors.forEach((color) => {
+            couleursHTML += `
+        <div style="
+          width: 50px;
+          height: 50px;
+          background: #${color};
+          display: inline-block;
+          margin: 5px;
+          border-radius: 8px;
+        "></div>
+      `;
+          });
+
+          calltoAction.innerHTML += `
+      <h3>${palette.title}</h3>
+      <div>${couleursHTML}</div>
+    `;
+        })
+        .catch((error) => {
+          console.error("Erreur API :", error);
+
+          calltoAction.innerHTML += `
+      <p>Impossible de charger la palette de couleurs.</p>
+    `;
+        });
+
+
       /// FIN DU CODE
 
 
@@ -161,16 +206,78 @@ function getData() {
 
       // BONUS 1 : Alert sur le bouton CTA
 
-      `alert()`
+      let ctaButton = document.querySelector('.cta-button');
+      ctaButton.addEventListener('click', () => {
+        alert("Merci pour votre abonnement");
+      });
+
+
+
+
+
 
       // BONUS 2 : Filtrage par thème
 
+      let buttons = document.querySelectorAll('.nav-theme-btn');
+
+      buttons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+
+          let theme = btn.textContent;
+
+          if (theme === "Tous") {
+            afficherArticles(journal.articles);
+          } else {
+            let articlesFiltres = journal.articles.filter(article =>
+              article.theme === theme
+            );
+
+            afficherArticles(articlesFiltres);
+          }
+        });
+      });
+
+
+      function afficherArticles(articles) {
+
+        articlesGrid.innerHTML = '';
+
+        articles.forEach((article) => {
+
+          let articleHTML = `
+      <div class="article-card">
+
+        <img src="${article.image}" alt="${article.titre}">
+
+        <div class="article-content">
+
+          <span class="theme-badge">${article.theme}</span>
+
+          <h3>${article.titre}</h3>
+
+          <p class="date">${article.date}</p>
+
+        </div>
+
+      </div>
+    `;
+
+          articlesGrid.innerHTML += articleHTML;
+        });
+      }
+
+
+
+
 
       // BONUS 3 : Tri par popularité
-      `popularite`
+
+      journal.articles.sort((a, b) => b.popularite - a.popularite);
+
 
     })
     .catch((error) => console.error('Erreur lors de la lecture des données :', error));
 }
 
 getData();
+

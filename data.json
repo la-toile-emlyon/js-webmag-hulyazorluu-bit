@@ -9,42 +9,42 @@
       "description": "Un tour d’horizon des refontes graphiques majeures qui marquent l’année et les stratégies derrière ces choix.",
       "date": "20 Mai 2025",
       "theme": "Tendances",
-      "image": "assets/images/image1.png"
+      "image": "assets/images/header.jpg"
     },
     "articles": [
       {
         "titre": "L’importance du logo dans la construction de l’image de marque",
         "date": "15 Avril 2025",
         "theme": "Fondamentaux",
-        "image": "assets/images/image2.png",
+        "image": "assets/images/1.photologo1.jpeg",
         "popularite": 34
       },
       {
         "titre": "Couleurs et typographies : le duo gagnant du design efficace",
         "date": "10 Mars 2025",
         "theme": "Esthétique",
-        "image": "assets/images/image3.jpg",
+        "image": "assets/images/2.couleurTypo2.jpeg",
         "popularite": 87
       },
       {
         "titre": "Stratégies de branding : comment créer une identité cohérente",
         "date": "25 Février 2025",
         "theme": "Stratégie",
-        "image": "assets/images/image4.jpg",
+        "image": "assets/images/3.strategieBranding.jpeg",
         "popularite": 12
       },
       {
         "titre": "Les collaborations entre designers et entreprises : un levier de succès",
         "date": "10 Janvier 2025",
         "theme": "Partenariats",
-        "image": "assets/images/image2.png",
+        "image": "assets/images/4.designerENT4.jpeg",
         "popularite": 14
       },
       {
         "titre": "Ethique et design : l’impact social des identités visuelles",
         "date": "5 Décembre 2024",
         "theme": "Responsabilité",
-        "image": "assets/images/image3.jpg",
+        "image": "assets/images/5.identitevisuelle5.jpeg",
         "popularite": 44
       }
     ],
@@ -79,19 +79,19 @@
         "prenom": "Claire",
         "typeExperience": "Designer graphique",
         "presentation": "Je crée des identités visuelles modernes et efficaces pour des marques ambitieuses.",
-        "photo": "assets/images/image2.png"
+        "photo": "assets/images/auteur1.jpg"
       },
       {
         "prenom": "Thomas",
         "typeExperience": "Stratège en branding",
         "presentation": "J’aide les entreprises à aligner leur image avec leurs valeurs et objectifs.",
-        "photo": "assets/images/image3.jpg"
+        "photo": "assets/images/auteur2.jpg"
       },
       {
         "prenom": "Elena",
         "typeExperience": "Chercheuse en design éthique",
         "presentation": "J’étudie l’impact social et environnemental du design visuel.",
-        "photo": "assets/images/image4.jpg"
+        "photo": "assets/images/auteur3.jpg"
       }
     ]
   }
